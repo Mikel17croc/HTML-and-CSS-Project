@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Request Results | Titan Waste Management</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .results-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .results-container h1 {
+            color: #0B5D1E;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .result-box {
+            background: #F5F5F5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #1E8F3D;
+        }
+
+        .result-box h3 {
+            color: #0B5D1E;
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #1E8F3D;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #0B5D1E;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="container nav-container">
+
+            <div class="logo-container">
+                <img src="CSS/images/titanwastemanagementlogo.png" alt="Titan Waste Management Logo" class="logo-image">
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- Results Section -->
+    <section class="results-container">
+
+        <h1>Quote Request Submitted</h1>
+
+        <div class="result-box">
+            <h3>Full Name</h3>
+            <p id="result-name"></p>
+        </div>
+
+        <div class="result-box">
+            <h3>Email Address</h3>
+            <p id="result-email"></p>
+        </div>
+
+        <div class="result-box">
+            <h3>Phone Number</h3>
+            <p id="result-phone"></p>
+        </div>
+
+        <div class="result-box">
+            <h3>Service Needed</h3>
+            <p id="result-service"></p>
+        </div>
+
+        <div class="result-box">
+            <h3>Message</h3>
+            <p id="result-message"></p>
+        </div>
+
+        <a href="contact.html" class="back-btn">
+            Back to Contact Page
+        </a>
+
+    </section>
+
+    <script>
+
+        // Get URL Parameters
+        const params = new URLSearchParams(window.location.search);
+
+        // Display Results
+        document.getElementById('result-name').textContent =
+            params.get('name');
+
+        document.getElementById('result-email').textContent =
+            params.get('email');
+
+        document.getElementById('result-phone').textContent =
+            params.get('phone');
+
+        document.getElementById('result-service').textContent =
+            params.get('service');
+
+        document.getElementById('result-message').textContent =
+            params.get('message');
+
+    </script>
+
+</body>
+
+</html>
